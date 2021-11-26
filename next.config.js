@@ -1,15 +1,30 @@
 /** @type {import('next').NextConfig} */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const theme = require('./config/theme') 
-module.exports = {
-  webpack(config,{isServer}) {
-    console.log(isServer)
-    
+// next.config.js
+const withLess = require("next-with-less");
+
+module.exports = withLess({
+
+  lessLoaderOptions: {
+    /* ... */
+    lessOptions: {
+      /* ... */
+      modifyVars: {
+        "primary-color": "#9900FF",
+        "border-radius-base": "2px",
+        /* ... */
+      },
+    },
+  },
+},{
+  webpack(config) {
     config.module.rules.push(
       {
         test: /\.less$/,
+        exclude: /node_modules/,
         use: [
-       
+          
           {
             loader: 'css-loader'
           },
@@ -18,11 +33,6 @@ module.exports = {
             options: {
               sourceMap: true,
               lessOptions: {
-                modifyVars: {
-                  'primary-color': '#1DA57A',
-                  'link-color': '#1DA57A',
-                  'border-radius-base': '2px',
-                },
                 javascriptEnabled: true
               }
             }
@@ -41,4 +51,6 @@ module.exports = {
     return config;
   },
   reactStrictMode: true,
-}
+});
+
+
