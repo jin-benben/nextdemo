@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
+import  stles from  './a.module.less'
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -17,6 +17,8 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <span className={stles.button}>ssdsd</span>
+        <p>你好，这是测试的一段话，你能不能看的见呢</p>
         <Button type="primary">test-button</Button>
         <p className={styles.description}>
           Get started by editing{' '}
