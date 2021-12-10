@@ -1,0 +1,61 @@
+.hotProduct{
+    width: 230px;
+    height: 362px;
+    &:hover{
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    }
+    .iamgeBox{
+      padding: 10px 10px 0 10px;
+    }
+    .productInfo{
+      padding-bottom: 10px;
+      margin-left:10px;
+      margin-right: 9px;
+      margin-bottom: 12px;
+      border-bottom: 1px dashed #ccc;
+      :global{
+        .productName{
+          margin-bottom: 12px;
+          padding-right: 9px;
+          line-height: 18px;
+          height: 36px;
+        }
+      }
+     
+    }
+    :global{
+      .avatar{
+        padding-left: 10px;
+      }
+    }
+    .tagsContent{
+      margin-left:12px;
+      margin-right: 9px;
+      border-bottom: 1px dashed #ccc;
+      margin-top: 9px;
+      padding-bottom: 12px;
+      color: #fff;
+      :global{
+        .tagItem{
+          border: 1px solid transparent;
+          border-radius: 3px;
+          margin-left: 5px;
+          padding:0px 5px;
+          height: 14px;
+        }
+        .contentText{
+          transform:skew(30deg) scale(0.83);
+        }
+        .year{
+          transform:skew(-30deg);
+          background: linear-gradient(323deg, #FF7B3B 0%, #FF4202 100%);
+        }
+      }
+    }
+    .mainBusiness{
+      height: 32px;
+      margin-top: 12px;
+      margin-left:10px;
+      margin-right: 9px;
+    }
+}
