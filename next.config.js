@@ -5,7 +5,7 @@ const withLess = require("next-with-less");
 
 module.exports = withLess({
   images: {
-    domains: ['imgniu.zhaojiafang.com'],
+    domains: ['imgniu.zhaojiafang.com','qiniu.zhaojiafang.com'],
   },
   reactStrictMode: true,
   lessLoaderOptions: {
@@ -14,11 +14,6 @@ module.exports = withLess({
       /* ... */
       modifyVars: theme,
     },
-  },
-  webpack: (config, options) => {
-   
-
-    return config
   },
 });
 

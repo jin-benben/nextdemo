@@ -1,7 +1,7 @@
   // tailwind.config.js
 module.exports = {
     purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: 'media', // or 'media' or 'class'
     theme: {
       extend: {
         lineHeight:{
@@ -14,7 +14,8 @@ module.exports = {
           '12':'12px',
           '14':'14px',
           '16':'16px',
-          '18':'18px'
+          '18':'18px',
+          '24':'24px'
         }
       },
       borderRadius:{
