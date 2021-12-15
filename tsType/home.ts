@@ -4,7 +4,7 @@ export interface Total {
 	relation: string;
 }
 
-export interface _source {
+export interface HotSkuInfo {
 	active_site_id: number;
 	spu_id: string;
 	id: string;
@@ -36,7 +36,7 @@ export interface Hit {
 	_type: string;
 	_id: string;
 	_score?: any;
-	_source: _source;
+	_source: HotSkuInfo;
 	sort: number[];
 }
 
@@ -45,4 +45,8 @@ export interface LiveInfo {
 	max_score?: any;
 	hits: Hit[];
 	active_name: string;
+}
+
+export interface CategoryItem {
+	[key]:any
 }

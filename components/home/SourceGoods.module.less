@@ -1,0 +1,98 @@
+
+.gridItem{
+  .mask{
+    position:absolute;
+    width: 378px;
+    height: 222px;
+    background: #000000;
+    opacity: 0.5;
+    z-index: 10;
+    top: 0px;
+    display: none;
+  }
+  .store{
+    width: 378px;
+    height: 222px;
+    position: relative;
+    &:hover{
+      .mask,.modalContent{
+        display: flex;
+      }
+    }
+    &:first-child{
+      .productimg,.mask{
+        border-top-left-radius: 8px;
+      }
+    }
+    &:nth-child(3){
+      .productimg,.mask{
+        border-top-right-radius: 8px;
+      }
+    }
+    &:nth-child(4){
+      .productimg,.tag1,.mask{
+        border-bottom-left-radius: 8px;
+      }
+    }
+    &:last-child{
+      .productimg,.mask{
+        border-bottom-right-radius: 8px;
+      }
+    }
+  }
+  // 弹出商品
+  .modalContent{
+    display: none;
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    .modalBody{
+      width: 350px;
+      height: 176px;
+      padding-left: 10px;
+    }
+  }
+}
+.goldSwiper{
+    height: 506px;
+    :global{
+        .swiper-wrapper{
+            height: 452px;
+        }
+        .swiper-pagination{
+          bottom: 24px;
+          line-height: 8px;
+        }
+        .swiper-pagination-bullet{
+            margin: 0 7px!important;
+          &.swiper-pagination-bullet-active{
+            background: linear-gradient(270deg, #FF5555 0%, #FF3838 100%);
+            width: 25px;
+            border-radius: 5px;
+          }
+        }
+    }
+}
+.tagContent{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  display: flex;
+  .tag1{
+    width: 80px;
+    height: 32px;
+    background: linear-gradient(316deg, #FF5555 0%, #FF3838 100%);
+    opacity: 0.85;
+    
+  }
+  .tag2{
+    width: 124px;
+    height: 32px;
+    background: #000000;
+    opacity: 0.65;
+    border-radius: 0px 11px 0px 0px;
+  }
+}

@@ -1,0 +1,32 @@
+.categoryContent{
+    width: 205px;
+    height: 555px;
+    
+    li{
+        padding-left: 19px;
+        padding-right:22px;
+        
+        &:hover{
+            background-color:#F4F4F4;
+            .categoryItem{
+                border-color: transparent;
+            }
+            :global{
+                .second{
+                    color: #666;
+                }
+            }
+        }
+        &:last-child{
+            .categoryItem{
+                border: none;
+            }
+          
+        }
+    }
+    .categoryItem{
+        padding-bottom: 12px;
+        padding-top: 19px;
+        box-sizing: border-box;
+    }
+}

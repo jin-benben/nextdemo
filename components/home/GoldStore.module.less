@@ -1,0 +1,36 @@
+.store{
+    width: 222px;
+    height: 240px;
+    .storeInfo{
+        margin: 0 12px;
+        height: 56px;
+        position: absolute;
+        padding-left: 10px;
+        width: 198px;
+        background: #ffffffe6;
+        bottom: 9px;
+        border-radius: 10px;
+    }
+   
+}
+
+.goldSwiper{
+    height: 796px;
+    :global{
+        .swiper-wrapper{
+            height: 744px;
+        }
+        .swiper-pagination{
+            bottom: 24px;
+            line-height: 8px;
+        }
+        .swiper-pagination-bullet{
+            margin: 0 7px!important;
+          &.swiper-pagination-bullet-active{
+            background: linear-gradient(270deg, #FF5555 0%, #FF3838 100%);
+            width: 25px;
+            border-radius: 5px;
+          }
+        }
+    }
+}

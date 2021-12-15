@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
-import {Pagination,EffectFade} from 'swiper'
+import { FC } from 'react'
+import {Pagination,EffectFade,Autoplay } from 'swiper'
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css'
@@ -7,8 +7,6 @@ import 'swiper/css/pagination';
 import { generateRandomKey } from 'utils';
 
 import style from './index.module.less'
-
-export const MySwiperSlide = SwiperSlide
 
 interface MySwiperProps extends SwiperProps {
   swipersilde?:React.ReactNode[]
@@ -19,7 +17,7 @@ const MySwiper:FC<MySwiperProps> = ({swipersilde,children,...ret}) => {
     <Swiper
     // install Swiper modules
       className={style.mySwiper}
-      modules={[ Pagination, EffectFade, ]}
+      modules={[ Pagination, EffectFade,Autoplay ]}
       pagination={{ clickable: true }}
       {...ret}
     >

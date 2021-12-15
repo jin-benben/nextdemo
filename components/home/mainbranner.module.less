@@ -1,0 +1,41 @@
+.mainStore{
+    width: 150px;
+    height: 205px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+    >div{
+        width: 100%;
+        position: absolute;
+        top: 125px;
+    }
+}
+.hotTag{
+    width: 68px;
+    height: 24px;
+    background: linear-gradient(180deg, #FF5555 0%, #FF3838 100%);
+    opacity: 0.8;
+    border-radius: 8px 0px 8px 0px;
+}
+.navigation{
+    position: absolute;
+    width: 20px;
+    height: 24px;
+    background: #000000;
+    text-align: center;
+    line-height: 24px;
+    opacity: 0.3;
+    z-index: 9;
+    top: 50%;
+    transform: translateY(-12px);
+    color: #fff;
+    cursor: pointer;
+}
+.nextEl{
+    .navigation;
+    border-radius: 12px 0px 0px 12px;
+    right: 12px;
+}
+.preEl{
+    .navigation;
+    border-radius: 0px 12px 12px 0px;
+    left: 12px;
+}

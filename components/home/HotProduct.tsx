@@ -1,10 +1,11 @@
 import { DOMAttributes, useState } from 'react'
 import type { NextPage } from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
 import classNames from 'classnames'
 import style from './HotProduct.module.less'
 import { Avatar } from 'antd'
-import { _source } from 'type/home'
+import { _source } from 'tsType/home'
 
 
 const MyAvatar:React.FC<{storeName:string}> = ({storeName}) => {
@@ -19,25 +20,37 @@ const MyAvatar:React.FC<{storeName:string}> = ({storeName}) => {
 const HotProduct:React.FC<{product:_source}> = ({product}) => {
   const [isHover, setIsHover] = useState(false);
   const itemOnMouseLeave:DOMAttributes<HTMLDivElement>['onMouseLeave']=(e)=>{
-    
+    setIsHover(false)
     console.log('检测到鼠标移出')
   }
   const itemOnMouseOver:DOMAttributes<HTMLDivElement>['onMouseEnter']=(e)=>{
- 
+   
+    setIsHover(true)
     console.log('检测到鼠标移进')
   }
   const imgOnMouseLeave:DOMAttributes<HTMLDivElement>['onMouseLeave']=(e)=>{
-    e.stopPropagation()
+    e.stopPropagation();
+    setIsHover(false)
     console.log('img鼠标移出')
   }
   const imgOnMouseEnter:DOMAttributes<HTMLDivElement>['onMouseEnter']=(e)=>{
     e.stopPropagation()
+    setIsHover(false)
     console.log('img鼠标移进')
   }
   return (
-    <div onMouseLeave={itemOnMouseLeave} onMouseEnter={itemOnMouseOver} className={classNames('rounded-md bg-white', style.hotProduct)}>
+    <div onMouseLeave={itemOnMouseLeave} onMouseEnter={itemOnMouseOver} className={classNames('rounded-md bg-white', style.hotProduct,{ [style.itemHover]: isHover })}>
       <div onMouseLeave={imgOnMouseLeave} onMouseEnter={imgOnMouseEnter} className={classNames("flex justify-center", style.iamgeBox)}>
         <Image  className="rounded-md" width={210} height={220} alt='' src={product.sku_image} />
+        <div className={classNames('flex justify-center items-center',style.imgpopover)}>
+          <div>
+            <span>收藏</span>
+          </div>
+          <span className={style.divider}>|</span>
+          <div>
+            <Link href="/">找同款</Link>
+          </div>
+        </div>
       </div>
       <div className={classNames('mt-12', { hidden: isHover })}>
         <div className={classNames(style.productInfo)}>
@@ -49,7 +62,7 @@ const HotProduct:React.FC<{product:_source}> = ({product}) => {
         </div>
         <MyAvatar storeName={product.store_name}/>
       </div>
-      <div className={classNames('mt-12', { hidden: !isHover })}>
+      <div className={classNames('mt-12',style.storePopover)}>
         <MyAvatar storeName={product.store_name}/>
         <div className={classNames('flex text-sm', style.tagsContent)}>
           <div className='year inline-flex tagItem leading-12'>
